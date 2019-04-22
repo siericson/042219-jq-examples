@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery example 7 - form event, submit</title>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+       
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+           $('form').submit(function(){
+              var regex = /^[a-zA-Z]+$/; 
+               var nameVal = $('#fName').val();
+               if(regex.test(nameVal) == false) {
+                   $('#msg').text('You have made an error, please enter your name').show().fadeOut(2000);
+               } else {
+                   $('#greeting').html('Hello there, '+ nameVal);
+               }
+               event.preventDefault();
+           });
+        }) // end doc ready
+    </script>
+</head>
+<body>
+<section>
+    <header>
+        <h1>Hello.</h1>
+    </header>
+    <article>
+        <h3>Subheading 1</h3>
+        <form action="">
+            <label for="fName">First Name:
+                <input type="text" id="fName" name="first name">
+            </label>
+            <input type="submit" value="Submit this">
+        </form>
+        <p id="msg"></p>
+        <h3 id="greeting"></h3>
+    </article>
+    
+</section>
+</body>
+</html>

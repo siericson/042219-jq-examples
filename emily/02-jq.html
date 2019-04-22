@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery example 2 - review</title>
+    <link rel="stylesheet" href="css/base.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('article').css({
+                'border-bottom': 'solid 1px #444',
+                marginBottom: '1rem',
+                padding: '.5rem'
+            });
+            
+            $('header h2').html('<em>hello Monday.</em>');
+            
+            $('#a3Btn').click(function(){
+                $('h3:last').text('Special new text');
+            });
+            
+            $('article:nth-of-type(2)').hover(function(){
+                $(this).slideUp();
+                $('#bringBack').show();
+            });
+            
+            $('#bringBack').hide();
+            
+            $('#bringBack').dblclick(function(){
+                $('article:nth-of-type(2)').slideDown();
+                $(this).hide();
+            })
+            
+        }) // end doc ready
+    </script>
+</head>
+<body>
+<!--    section>header>h1{Hello}+h2{Happy Monday}^article*3>h3{Subheading}+p>lorem-->
+<section>
+    <header>
+        <h1>Hello</h1>
+        <h2>jQuery is not loaded yet.</h2>
+    </header>
+    <article>
+        <h3>Subheading 1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime minima quam modi, nostrum temporibus blanditiis libero consequuntur, natus odio, a numquam ratione assumenda voluptate quod illum quos ducimus? Expedita, totam.</p>
+        <button id="bringBack">Display 2nd article again</button>
+    </article>
+    <article>
+        <h3>Subheading 2</h3>
+        <p>Ex cupiditate, ullam laborum. Nisi saepe provident, molestias necessitatibus unde corporis, aut ea? Incidunt vitae molestias, possimus similique harum voluptas tenetur animi. Odit placeat consectetur eos, obcaecati officia, beatae debitis.</p>
+    </article>
+    <article>
+        <h3>Regular heading</h3>
+        <p>Atque possimus facere quas nam odit, esse enim minus molestias voluptatibus. At natus explicabo totam, porro excepturi accusantium minima voluptas, tenetur obcaecati sequi, repellat, rerum non laborum maxime harum delectus.</p>
+        <button id="a3Btn">Replace the heading</button>
+    </article>
+</section>
+</body>
+</html>

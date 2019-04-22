@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery example 4 - review</title>
+    <meta name="viewport" content="width=device-width,  initial-scale=1.0">
+    <link rel="stylesheet" href="css/base.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            var i = 0;
+            $('input[type="text"]').keyup(function(){
+                $('p span').text(i += 1);
+                $('#results').text($(this).val());
+                $('#feedback').text('You pressed it').css({
+                    backgroundColor: '#c0f01a',
+                    color: 'white',
+                    padding: '2px'
+            }).show().fadeOut();
+            })
+        }) // end doc ready
+    </script>
+</head>
+<body>
+   
+<!--   section>header>h1{Hello}+h2{Happy Monday}^article*3>h3{Subheading}+p>lorem-->
+    <section>
+        <header>
+            <h1>Hello</h1>
+        </header>
+        <article>
+            <h3>Subheading 1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus possimus illum, necessitatibus esse, alias quos fuga nobis perspiciatis totam asperiores cupiditate optio omnis voluptas laborum ea fugiat sed dicta velit.</p>
+            <p><input type="text" placeholder="type something"></p>
+            <p>Keyup: <span>0</span></p>
+            <p id="results"></p>
+            <p id="feedback"></p>
+        </article>
+    </section>
+</body>
+</html>

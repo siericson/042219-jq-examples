@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery example 1 - review</title>
+    <meta name="viewport" content="width=device-width,  initial-scale=1.0">
+    <link rel="stylesheet" href="css/base.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('article').css({
+                'border-bottom': 'solid 1px #444',
+                marginBottom: '1rem',
+                padding: '.5rem'
+            });
+            
+            $('article h3').hover(function(){
+                $(this).toggleClass('highlight');
+                $('header h1').addClass('highlight').css('color','#c0f01a');
+            }, function(){
+                $(this).toggleClass('highlight');
+                $('header h1').removeClass('hightlight').css('color', '#333');
+            })
+            
+        }) // end doc ready
+    </script>
+</head>
+<body>
+   
+<!--   section>header>h1{Hello}+h2{Happy Monday}^article*3>h3{Subheading}+p>lorem-->
+    <section>
+        <header>
+            <h1>Hello</h1>
+            <h2>jQuery is not loaded yet.</h2>
+        </header>
+        <article>
+            <h3>Subheading 1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus possimus illum, necessitatibus esse, alias quos fuga nobis perspiciatis totam asperiores cupiditate optio omnis voluptas laborum ea fugiat sed dicta velit.</p>
+            <button>Make it stand out</button>
+        </article>
+        <article>
+            <h3>Subheading 2</h3>
+            <p>Omnis reprehenderit doloremque ea magnam quasi quos accusamus suscipit, quod ratione inventore tempora quo atque laudantium, odio iusto mollitia possimus consectetur illum similique! Tempore perferendis iusto excepturi, nihil! Architecto, placeat?</p>
+        </article>
+        <article>
+            <h3>Regular heading</h3>
+            <p>Quia error quaerat maxime! Porro reprehenderit beatae eum, vel veritatis? Veniam vitae, est minus atque architecto harum corporis pariatur esse aliquid consequatur nam placeat doloremque animi velit earum fuga sapiente.</p>
+        </article>
+    </section>
+</body>
+</html>

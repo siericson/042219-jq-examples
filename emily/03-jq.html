@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery example 3 - events</title>
+    <link rel="stylesheet" href="css/base.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('article').css({
+                'border-bottom': 'solid 1px #444',
+                marginBottom: '1rem',
+                padding: '.5rem'
+            });
+            
+            $('article h3').hover(function(){
+                //$(this).toggleClass('highlight');
+                $('header h1').addClass('highlight').css('color','#c0f01a');
+            }, function(){
+                //$(this).toggleClass('highlight');
+                $('header h1').removeClass('highlight').css('color','#333');
+            })
+        }) // end doc ready
+    </script>
+</head>
+<body>
+<!--    section>header>h1{Hello}+h2{Happy Monday}^article*3>h3{Subheading}+p>lorem-->
+<section>
+    <header>
+        <h1>Hello</h1>
+        <h2>jQuery is not loaded yet.</h2>
+    </header>
+    <article>
+        <h3>Subheading 1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime minima quam modi, nostrum temporibus blanditiis libero consequuntur, natus odio, a numquam ratione assumenda voluptate quod illum quos ducimus? Expedita, totam.</p>
+        <button>Make it stand out</button>
+    </article>
+    <article>
+        <h3>Subheading 2</h3>
+        <p>Ex cupiditate, ullam laborum. Nisi saepe provident, molestias necessitatibus unde corporis, aut ea? Incidunt vitae molestias, possimus similique harum voluptas tenetur animi. Odit placeat consectetur eos, obcaecati officia, beatae debitis.</p>
+    </article>
+    <article>
+        <h3>Regular heading</h3>
+        <p>Atque possimus facere quas nam odit, esse enim minus molestias voluptatibus. At natus explicabo totam, porro excepturi accusantium minima voluptas, tenetur obcaecati sequi, repellat, rerum non laborum maxime harum delectus.</p>
+    </article>
+</section>
+</body>
+</html>

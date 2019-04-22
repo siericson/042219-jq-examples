@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery example 9 - scroll</title>
+    <meta name="viewport" content="width=device-width,  initial-scale=1.0">
+    <link rel="stylesheet" href="css/base.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $(window).scroll(function(){
+                $('#scrollMsg').show().fadout('slow');
+                $('#scrollMsg').fadeIn();
+            })
+            
+            $('#scrollMsg a').click(function(){
+                $('#scrollMsg').hide();
+                event.preventDefault();
+            })
+        }) // end doc ready
+    </script>
+    
+    <style>
+        p {
+            padding: 50px 0;
+            text-align: center;
+            font-size: 4em;
+            background-color: forestgreen;
+            margin-bottom: .5em;
+        }
+        #scrollMsg {
+            position: fixed;
+            top: 100px;
+            left: 0;
+            width: 100%;
+            background-color: rgba(227,242,157,.9);
+            display: none;
+        }
+        #scrollMsg a {
+            text-decoration: none;
+            color: #8fa918;
+            font-size: 10px;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+        .sections {
+            height: 400px;
+        }
+    </style>
+    
+</head>
+<body>
+   
+<!--   section>header>h1{Hello}+h2{Happy Monday}^article*3>h3{Subheading}+p>lorem-->
+    <section>
+        <header>
+            <h1>Hello</h1>
+        </header>
+        <article>
+            <p id="scrollMsg">You scrolled!<a href="#">&otimes;</a></p>
+            <p class="sections">Scroll me</p>
+            <p class="sections">Scroll me</p>
+            <p class="sections">Scroll me</p>
+            <p class="sections">Scroll me</p>
+            <p class="sections">Scroll me</p>
+        </article>
+    </section>
+</body>
+</html>
